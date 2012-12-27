@@ -1,2 +1,38 @@
-﻿body {
+﻿@import "compass/reset";
+@import "twitter/bootstrap";
+@import "twitter/responsive";
+
+body
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $white;
 }
+
+.form-signin
+{
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: $formActionsBackground;
+    border: 1px solid $inputBorder;
+    -webkit-border-radius: $baseBorderRadius;
+    -moz-border-radius: $baseBorderRadius;
+    border-radius: $baseBorderRadius;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+
+    .form-signin-heading, .checkbox
+    {
+        margin-bottom: 10px;
+    }
+    input[type="text"], input[type="password"]
+    {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+    }
+}   
+

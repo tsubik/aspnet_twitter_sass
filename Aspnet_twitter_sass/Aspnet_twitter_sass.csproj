@@ -138,16 +138,66 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="config.rb" />
+    <Content Include="Content\application.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\sass\twitter\tests\buttons.html" />
+    <Content Include="Content\sass\twitter\tests\css-tests.css" />
+    <Content Include="Content\sass\twitter\tests\css-tests.html" />
+    <Content Include="Content\sass\twitter\tests\forms-responsive.html" />
+    <Content Include="Content\sass\twitter\tests\forms.html" />
+    <Content Include="Content\sass\twitter\tests\navbar-fixed-top.html" />
+    <Content Include="Content\sass\twitter\tests\navbar-static-top.html" />
+    <Content Include="Content\sass\twitter\tests\navbar.html" />
+    <Content Include="Content\twitter\bootstrap.css" />
+    <Content Include="Content\twitter\responsive.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\html5shiv.js" />
+    <Content Include="Content\sass\twitter\bootstrap.scss" />
+    <Content Include="Content\sass\twitter\responsive.scss" />
+    <Content Include="Content\sass\twitter\_accordion.scss" />
+    <Content Include="Content\sass\twitter\_alerts.scss" />
+    <Content Include="Content\sass\twitter\_breadcrumbs.scss" />
+    <Content Include="Content\sass\twitter\_button-groups.scss" />
+    <Content Include="Content\sass\twitter\_buttons.scss" />
+    <Content Include="Content\sass\twitter\_carousel.scss" />
+    <Content Include="Content\sass\twitter\_close.scss" />
+    <Content Include="Content\sass\twitter\_code.scss" />
+    <Content Include="Content\sass\twitter\_component-animations.scss" />
+    <Content Include="Content\sass\twitter\_dropdowns.scss" />
+    <Content Include="Content\sass\twitter\_forms.scss" />
+    <Content Include="Content\sass\twitter\_grid.scss" />
+    <Content Include="Content\sass\twitter\_hero-unit.scss" />
+    <Content Include="Content\sass\twitter\_labels-badges.scss" />
+    <Content Include="Content\sass\twitter\_layouts.scss" />
+    <Content Include="Content\sass\twitter\_media.scss" />
+    <Content Include="Content\sass\twitter\_mixins.scss" />
+    <Content Include="Content\sass\twitter\_modals.scss" />
+    <Content Include="Content\sass\twitter\_navbar.scss" />
+    <Content Include="Content\sass\twitter\_navs.scss" />
+    <Content Include="Content\sass\twitter\_pager.scss" />
+    <Content Include="Content\sass\twitter\_pagination.scss" />
+    <Content Include="Content\sass\twitter\_popovers.scss" />
+    <Content Include="Content\sass\twitter\_progress-bars.scss" />
+    <Content Include="Content\sass\twitter\_reset.scss" />
+    <Content Include="Content\sass\twitter\_responsive-1200px-min.scss" />
+    <Content Include="Content\sass\twitter\_responsive-767px-max.scss" />
+    <Content Include="Content\sass\twitter\_responsive-768px-979px.scss" />
+    <Content Include="Content\sass\twitter\_responsive-navbar.scss" />
+    <Content Include="Content\sass\twitter\_responsive-utilities.scss" />
+    <Content Include="Content\sass\twitter\_scaffolding.scss" />
+    <Content Include="Content\sass\twitter\_sprites.scss" />
+    <Content Include="Content\sass\twitter\_tables.scss" />
+    <Content Include="Content\sass\twitter\_thumbnails.scss" />
+    <Content Include="Content\sass\twitter\_tooltip.scss" />
+    <Content Include="Content\sass\twitter\_type.scss" />
+    <Content Include="Content\sass\twitter\_utilities.scss" />
+    <Content Include="Content\sass\twitter\_variables.scss" />
+    <Content Include="Content\sass\twitter\_wells.scss" />
+    <Content Include="Content\sass\application.scss" />
     <None Include="scripts\jquery-1.8.3.intellisense.js" />
     <Content Include="scripts\jquery-1.8.3.js" />
     <Content Include="scripts\jquery-1.8.3.min.js" />
@@ -219,6 +269,18 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="AfterCompile" Condition=" '$(Configuration)' == 'Release' ">
+    <Exec Command="compass compile" />
+    <ItemGroup>
+      <Content Include="Content\*.css" />
+    </ItemGroup>
+  </Target>
+  <Target Name="AfterCompile" Condition=" '$(Configuration)' == 'Debug' ">
+    <Exec Command="compass compile" />
+    <ItemGroup>
+      <Content Include="Content\*.css" />
+    </ItemGroup>
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
