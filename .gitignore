@@ -70,5 +70,7 @@ _ReSharper*/
 Newsletter/
 Logs/
 Upload/
- 
+
+# Sass cache
+.sass-cache
 # End of File
